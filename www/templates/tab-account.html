@@ -1,32 +1,7 @@
-<ion-view view-title="Statement of Account">
+<ion-view view-title=".60">
   <ion-content>
 
-  	<div class="list">
-            <div class="item item-input-inset">
-              <label class="item-input">
-                <input type="number" placeholder="Enter Card Number.." ng-model="card_num" id="trans_card_num">
-              </label>
-              &nbsp;
-              <label class="item-input">
-                <ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback">
-                  <input type="text" value="{{ currentDate | date:'MMMM/dd/yyyy' }}" id="trans_start_date" ng-model="start_date" placeholder="Enter Start Date..">
-                </ionic-datepicker>
-              </label>
-              &nbsp;
-              <label class="item-input">
-                <ionic-datepicker date="currentDate2" min="minDate" max="maxDate" callback="datePickerCallback2">
-                  <input type="text" value="{{ currentDate2 | date:'MMMM/dd/yyyy' }}" ng-model="trans_end_date" id="trans_end_date" placeholder="Enter End Date..">
-                </ionic-datepicker>
-              </label>
-
-              <label class="item-input">
-                <button class="button button-positive" ng-click="submit_transaction()">
-                  <i class="icon-right ion-search"></i> Search Record
-                </button>
-              </label>
-
-            </div>
-      </div>
+  <iframe height="100%" width="100%" src="http://10.128.0.60/icard_services_portal/content/index.php" frameBorder="0"></iframe>
 
 
   </ion-content>
