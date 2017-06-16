@@ -1,0 +1,83 @@
+<ion-view view-title="Transaction History">
+  <ion-content class="padding">
+ 
+       <div class="list">
+            <div class="item item-input-inset">
+              <label class="item-input">
+                <input type="number" placeholder="Enter Card Number.." ng-model="card_num" id="trans_card_num">
+              </label>
+              &nbsp;
+              <label class="item-input">
+                <ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback">
+                  <input type="text" value="{{ currentDate | date:'MMMM/dd/yyyy' }}" id="trans_start_date" ng-model="start_date" placeholder="Enter Start Date..">
+                </ionic-datepicker>
+              </label>
+              &nbsp;
+              <label class="item-input">
+                <ionic-datepicker date="currentDate2" min="minDate" max="maxDate" callback="datePickerCallback2">
+                  <input type="text" value="{{ currentDate2 | date:'MMMM/dd/yyyy' }}" ng-model="trans_end_date" id="trans_end_date" placeholder="Enter End Date..">
+                </ionic-datepicker>
+              </label>
+
+              <label class="item-input">
+                <button class="button button-positive" ng-click="submit_transaction()">
+                  <i class="icon-right ion-search"></i> Search Record
+                </button>
+              </label>
+
+            </div>
+      </div>
+
+
+        <div class="row header" style="font-weight: bold;">
+          <div class="col">TRANSACTION DATE</div>
+          <div class="col">TRANSACTION TYPE</div>
+          <div class="col">AMOUNT</div>
+          <div class="col">TERMINAL ID</div>
+          <div class="col">REFERENCE NO</div>
+          <div class="col">STORE</div>
+          <div class="col">STATUS</div>
+        </div>
+        <div class="row" ng-repeat="x in datalist">
+          <div class="col">{{x.TRXN_DATE}}</div>
+          <div class="col">{{x.TRAN_TYPE}}</div>
+          <div class="col">{{x.TRXN_AMOUNT}}</div>
+          <div class="col">{{x.TERMINAL_ID}}</div>
+          <div class="col">{{x.REFNO}}</div>
+          <div class="col">{{x.STORE}}</div>
+          <div class="col">{{x.STATUS_NAME}}</div>
+        </div>
+
+
+<!-- 
+  <ion-infinite-scroll on-infinite="loadMore()" distance="1%">
+  </ion-infinite-scroll> -->
+<!-- 
+ <div align="right" style="padding-right:10px;padding-bottom:10px;">
+                        <ul class="pagination">
+                            <li class="paginate_button previous disabled" aria-controls="dynamic-table" tabindex="0" id="dynamic-table_previous">
+                                <a href="javascript:void(0)" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">Previous</a>
+                            </li>
+
+                            <li class="paginate_button active" aria-controls="dynamic-table" tabindex="0">
+                                <a href="javascript:void(0)">{{currentPage+1}}</a>
+                            </li>
+
+                            <li class="paginate_button " aria-controls="dynamic-table" tabindex="0">
+                                <a href="javascript:void(0)"><strong>of</strong></a>
+                            </li>
+
+                            <li class="paginate_button " aria-controls="dynamic-table" tabindex="0">
+                                <a href="javascript:void(0)">{{numberOfPages()}}</a>
+                            </li>
+
+                            <li class="paginate_button next" aria-controls="dynamic-table" tabindex="0" id="dynamic-table_next">
+                                <a href="javascript:void(0)" ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">Next</a>
+                            </li>
+                        </ul>
+                <input type="hidden" id="current_branch">
+                </div>
+      </div> -->
+
+  </ion-content>
+</ion-view>

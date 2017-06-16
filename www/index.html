@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/loader.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="lib/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    
+    <script src="lib/dirPagination.js"></script>
+
+    <link href="lib/datepicker-for-ionic/dist/style.css" rel="stylesheet"> 
+<!-- path to ionic/angularjs js -->
+<script src="lib/datepicker-for-ionic/dist/templates.min.js"></script>
+<script src="lib/datepicker-for-ionic/dist/ionic-datepicker.min.js"></script>
+  </head>
+  <body ng-app="starter">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <ion-nav-view></ion-nav-view>
+    <style>
+  .pre_blocker{
+   position:fixed;
+   left:0;
+   top:0;
+   z-index:99999999999;
+   width:100%;
+   height:100%;
+   overflow:visible;
+   background: rgba(0,0,0,0.8);
+   color: #fff;
+   display: table;
+}
+</style>
+ <script type="text/javascript">
+   function loader(action){
+    switch(action){
+      case "on":
+        $(".pre_blocker").show();
+      break;
+      case "off":
+
+        $(".pre_blocker").hide();
+      break;
+    }
+   }
+ </script>
+  <div class="pre_blocker" style="display:none;">
+      <center>
+       <p style="padding-top:20%;font-size: 15px;">  
+       <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns=""><circle class="circle" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg>
+      </center>
+  </div>
+  </body>
+</html>
