@@ -6,25 +6,33 @@
               <label class="item-input">
                 <input type="number" placeholder="Enter Card Number.." ng-model="card_num" id="trans_card_num">
               </label>
-              &nbsp;
+            </div>
+      </div>
+
+       <div class="list">
+            <div class="item item-input-inset">
               <label class="item-input">
                 <ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback">
                   <input type="text" value="{{ currentDate | date:'MMMM/dd/yyyy' }}" id="trans_start_date" ng-model="start_date" placeholder="Enter Start Date..">
                 </ionic-datepicker>
               </label>
-              &nbsp;
+            </div>
+      </div>
+
+       <div class="list">
+            <div class="item item-input-inset">
               <label class="item-input">
                 <ionic-datepicker date="currentDate2" min="minDate" max="maxDate" callback="datePickerCallback2">
                   <input type="text" value="{{ currentDate2 | date:'MMMM/dd/yyyy' }}" ng-model="trans_end_date" id="trans_end_date" placeholder="Enter End Date..">
                 </ionic-datepicker>
               </label>
+      </div>
 
-              <label class="item-input">
-                <button class="button button-positive" ng-click="submit_transaction()">
+       <div class="list">
+            <div class="item item-input-inset">
+                <button class="button button-positive" ng-click="submit_transaction()" style="width:100%;">
                   <i class="icon-right ion-search"></i> Search Record
                 </button>
-              </label>
-
             </div>
       </div>
 
@@ -34,18 +42,18 @@
           <div class="col">TRANSACTION TYPE</div>
           <div class="col">AMOUNT</div>
           <div class="col">TERMINAL ID</div>
-          <div class="col">REFERENCE NO</div>
+<!--           <div class="col">REFERENCE NO</div>
           <div class="col">STORE</div>
-          <div class="col">STATUS</div>
+          <div class="col">STATUS</div> -->
         </div>
         <div class="row" ng-repeat="x in datalist">
           <div class="col">{{x.TRXN_DATE}}</div>
           <div class="col">{{x.TRAN_TYPE}}</div>
           <div class="col">{{x.TRXN_AMOUNT}}</div>
           <div class="col">{{x.TERMINAL_ID}}</div>
-          <div class="col">{{x.REFNO}}</div>
+<!--           <div class="col">{{x.REFNO}}</div>
           <div class="col">{{x.STORE}}</div>
-          <div class="col">{{x.STATUS_NAME}}</div>
+          <div class="col">{{x.STATUS_NAME}}</div> -->
         </div>
 
 
